@@ -1,0 +1,78 @@
+body{
+	color:white;
+	text-align:center;
+	font-weight: 650;
+	font-family: Helvetica;
+}
+
+.Text-Box{
+	padding-left: 44.5%;
+}
+
+#Main-Label{
+	text-align:center;
+	padding-top: 4%;
+	font-family: Helvetica;
+	font-weight: 600;
+	color:black;
+}
+
+.Sub-Label{
+	color:blue;
+	text-align:center;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-weight: 600;
+}
+
+#submit{
+	text-align:center;
+	margin-bottom: 5%;
+	
+}
+
+.form-control{
+	width: 20%;
+}
+
+.Order-Pics{
+	height: 200px;
+	width: 200px;
+	
+}
+
+.Choice-Labels{
+	font-family: Helvetica;
+	font-weight: 750;
+	font-size: 22px;
+}
+
+.Order-Item{
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:3%;	
+}
+
+.Order-Quantity{
+	width:50px;
+	text-align: center;
+}
+
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 5px solid yellow;
+}

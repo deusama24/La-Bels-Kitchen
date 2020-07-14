@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required Bootstrap meta tags -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!--STYLESHEETS BELOW-->
+	
+	<!--Bootstrap CSS, Put before other stylesheets-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+	<!--Homepage Stylesheet-->
+	<link rel="stylesheet" href="Homepage.css">
+	<link rel="stylesheet" href="Order Page.css">
+	
+	<!--STYLESHEETS ABOVE-->
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="263497103303-17ogd1h18iu2go6re752gt8jo7tfh2l2.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
+	
+
+	<!--title-->
+	<title>Order Now!</title>
+
+</head>
+
+<body>
+
+<!--NAVIGATION BAR BELOW-->
+<div id="try">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="Homepage.html"><img id="main-logo"src="Logos/Burger Logo.jpg"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="Order Page.html">Order Page</a>
+      </li>
+	  <!--TO BE IMPLEMENTED EVENTUALLY-->
+
+	  <li class="nav-item">
+        <a class="nav-link" href="Order_Queue.html">Order Queue</a>
+      </li>
+	  <li class="nav-item">
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+		
+		<script>
+		  function onSignIn(googleUser) {
+			// Useful data for your client-side scripts:
+			var profile = googleUser.getBasicProfile();
+			console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+			console.log('Full Name: ' + profile.getName());
+			console.log('Given Name: ' + profile.getGivenName());
+			console.log('Family Name: ' + profile.getFamilyName());
+			console.log("Image URL: " + profile.getImageUrl());
+			console.log("Email: " + profile.getEmail());
+
+			// The ID token you need to pass to your backend:
+			var id_token = googleUser.getAuthResponse().id_token;
+			console.log("ID Token: " + id_token);
+			}
+		  
+		  // auth2 is initialized with gapi.auth2.init() and a user is signed in.
+
+		if (auth2.isSignedIn.get()) {
+		  var profile = auth2.currentUser.get().getBasicProfile();
+		  console.log('ID: ' + profile.getId());
+		  console.log('Full Name: ' + profile.getName());
+		  console.log('Given Name: ' + profile.getGivenName());
+		  console.log('Family Name: ' + profile.getFamilyName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('Email: ' + profile.getEmail());
+		}
+		</script>
+      </li>
+	  
+	  <li class="nav-item">
+		<button class="btn btn-primary btn-md" onclick="signOut();">Sign out</button>
+		<script>
+		  function signOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+			  console.log('User signed out.');
+			  location.reload();
+			});
+		  }
+		</script>
+	  </li>
+	  <!--TO BE IMPLEMENTED EVENTUALLY-->
+    </ul>
+  </div>
+</nav>
+</div>
+<!--NAVIGATION BAR ABOVE-->
+
+
+<!--FORM MAIN LABEL BELOW-->
+
+<h1 id="Main-Label">Customer Ordering Page</h1>
+
+<!--FORM MAIN LABEL ABOVE-->
+
+
+<!--TOP HALF OF THE FORM BELOW-->
+
+	<!--TOP HALF SUB LABEL BELOW-->
+	
+	<h3 class="Sub-Label">Customer Information</h3>
+
+	<!--TOP HALF SUB LABEL ABOVE-->
+
+<form action="insert.php" method="post" class="need-validating">
+
+<div class="form-group">
+
+	<label for="FName">First Name:</label>
+
+	<div class="Text-Box">
+		<input type="text" class="form-control" id="FName" placeholder="Enter First Name" name="FName" required>
+	</div>
+		
+	<div class="valid-feedback">Valid.</div>
+	<div class="invalid-feedback">Please fill out this field.</div>
+	
+</div>
+  
+  
+<div class="form-group">
+	
+	<label for="LName">Last Name:</label>
+		
+	<div class="Text-Box">
+		<input type="text" class="form-control" id="LName" placeholder="Enter Last Name" name="LName" required>
+	</div>
+
+	<div class="valid-feedback">Valid.</div>
+	<div class="invalid-feedback">Please fill out this field.</div>
+	
+</div>
+
+<div class="form-group">
+	
+	<label for="CNum">Contact Number:</label>
+		
+	<div class="Text-Box">
+		<input type="text" class="form-control" id="CNum" placeholder="Enter Contact No." name="CNum" required>
+	</div>
+
+	<div class="valid-feedback">Valid.</div>
+	<div class="invalid-feedback">Please fill out this field.</div>
+	
+</div>
+
+<div class="form-group">
+	
+	<label for="Address">Address:</label>
+		
+	<div class="Text-Box">
+		<input type="text" class="form-control" id="Address" placeholder="Enter Address" name="Address" required>
+	</div>
+
+	<div class="valid-feedback">Valid.</div>
+	<div class="invalid-feedback">Please fill out this field.</div>
+	
+</div>
+<br>
+	
+	<p>
+		Only Fullfill "Order Number" if Updating an Order. 
+		<br>
+		Leave Blank for new orders.
+	</p>
+	
+<div class="form-group">
+
+	<label for="Order_No">Order Number:</label>
+		
+	<div class="Text-Box">
+		<input type="text" class="form-control" id="Order-No" placeholder="Enter Order No." name="Order_No">
+	</div>
+	<!--
+	<div class="valid-feedback">Valid.</div>
+	<div class="invalid-feedback">Please fill out this field.</div>
+	-->
+</div>
+		
+<!--TOP HALF OF THE FORM ABOVE-->
+
+<!--BOTTOM HALF OF THE FORM BELOW-->
+
+<h3 class="Sub-Label">Customer Order Selection</h3>
+
+<label class="Order-Item">
+
+	<label class="Choice-Labels" for="Choice-1">Baked Macaroni</label>
+	
+	<div id="Choice-1">
+	<!--
+	  <input type="radio" name="Order" value="Baked Macaroni" checked>
+	-->
+	  <img class="Order-Pics" alt="Baked Macaroni" src="Food Pics/Bakedmac.jpg">
+	  <br><br>
+	  <input type="number" class="Order-Quantity" name="Item-1-Quantity" value="0" max="99" min="0">
+	</div>
+	
+</label>
+
+<label class="Order-Item">
+
+	<label class="Choice-Labels" for="Choice-2">Carbonara</label>
+
+	<div id="Choice-2">
+	<!--
+	  <input type="radio" name="Order" value="Carbonara" checked>
+	-->
+	  <img class="Order-Pics" alt="Carbonara" src="Food Pics/Carbonara.jpg"> 
+	  <br><br>
+	  <input type="number" class="Order-Quantity" name="Item-2-Quantity" value="0" max="99" min="0">
+	</div>
+	  
+</label>
+
+<label class="Order-Item">
+
+	<label class="Choice-Labels" for="Choice-3">Cheese Burger</label>
+
+	<div id="Choice-3">
+	<!--
+	  <input type="radio" name="Order" value="Cheese Burger" checked>
+	-->
+	  <img class="Order-Pics" alt="Cheese Burger" src="Food Pics/Burger.jpg">
+	  <br><br>
+	  <input type="number" class="Order-Quantity" name="Item-3-Quantity" value="0" max="99" min="0">
+	</div>
+
+</label>
+
+<!--BOTTOM HALF OF THE FORM ABOVE-->
+
+<div id="submit">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+  
+</form>
+
+</div>
+
+	
+	<!--Bootstrap JS-->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
